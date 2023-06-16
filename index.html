@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vue App</title>
+  <script src="https://unpkg.com/vue@3.0.2"></script>
+</head>
+<body>
+  <div id="app">
+    <div v-if="showBooks">
+      <ul>
+        <li v-for="book in books">
+          <h3>{{ book.title }}</h3>
+          <p>{{ book.author }}</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    const app = Vue.createApp({
+      data() {
+        return {
+          showBooks: true,
+          books: [
+            { title: 'Batman', author: 'bob kayn' },
+            { title: 'Spider Man', author: 'Stan Lee' },
+            { title: 'Spider Man', author: 'Stan Lee' },
+            { title: 'Superman', author: 'Wayne Borin' }
+          ]
+        }
+      }
+    })
+
+    app.mount('#app')
+  </script>
+</body>
+</html>
