@@ -1,26 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Vue App</title>
-  <script src="https://unpkg.com/vue@3.0.2"></script>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="app">
-    <!-- <a :href="url">facebook dynamic</a> 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Vue App</title>
+    <script src="https://unpkg.com/vue@3.0.2"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <!-- 
     att binding with v-bind and :
     -->
-    <div v-if="showBooks">
-      <ul>
-        <li v-for="book in books">
-          <img :src="book.img" :alt="book.title">
-          <h3>{{ book.title }}</h3>
-          <p>{{ book.author }}</p>
-        </li>
-      </ul>
+      <div class="container" v-if="showBooks">
+        <ul>
+          <li v-for="book in books" :class="{ fav: book.isFav }">
+            <img :src="book.img" :alt="book.title" />
+            <h3>{{ book.title }}</h3>
+            <p>{{ book.author }}</p>
+            <button class="button-37" role="button" @click="isFav(book)">
+              {{ book.isFav ? 'Remove from favorites' : 'Add to favorites' }}
+            </button>
+            </button>
+          </li>
+        </ul>
+      </div>
+      <div class="btn">
+        <div class="btn">
+          <button class="button-49" role="button" @click="showBook">
+            <span v-if="showBooks"> hide books </span>
+            <span v-else> Show books </span>
+          </button>
+        </div>
+      </div>
     </div>
-  </div>
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
