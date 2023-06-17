@@ -1,5 +1,6 @@
 *{
     font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
 }
 .container{
     display: flex;
@@ -29,9 +30,7 @@ li.fav{
     background-color: greenyellow;
     border-radius: 20px;
     border-color: green;
-    border: solid 2px black;
-    border-radius: 10px;
-}
+    }
 .btn{
     margin-top: 20px;
     display: flex;
