@@ -4,34 +4,23 @@
   <meta charset="UTF-8">
   <title>Vue App</title>
   <script src="https://unpkg.com/vue@3.0.2"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="app">
+    <!-- <a :href="url">facebook dynamic</a> 
+    att binding with v-bind and :
+    -->
     <div v-if="showBooks">
       <ul>
         <li v-for="book in books">
+          <img :src="book.img" :alt="book.title">
           <h3>{{ book.title }}</h3>
           <p>{{ book.author }}</p>
         </li>
       </ul>
     </div>
   </div>
-  <script>
-    const app = Vue.createApp({
-      data() {
-        return {
-          showBooks: true,
-          books: [
-            { title: 'Batman', author: 'bob kayn' },
-            { title: 'Spider Man', author: 'Stan Lee' },
-            { title: 'Spider Man', author: 'Stan Lee' },
-            { title: 'Superman', author: 'Wayne Borin' }
-          ]
-        }
-      }
-    })
-
-    app.mount('#app')
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>

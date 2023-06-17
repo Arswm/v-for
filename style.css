@@ -1,0 +1,15 @@
+#app{
+    display: flex;
+    justify-content: center;
+}
+#app ul {
+    display: flex;
+    list-style: none;
+    text-align: center;
+    gap: 12px;
+}
+#app img{
+   height: 393px;
+   width: 700px;
+   object-fit: cover;
+}
